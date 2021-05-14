@@ -34,9 +34,22 @@ const person = {
     
 }
 
+// function newTableRow(){
+//     append(`<tr class = "newTable">
+//                 <td class = "newTable" id = "appFn"></td>
+//                 <td class = "newTable" id = "appLn"></td>
+//                 <td class = "newTable" id = "appId"></td>
+//                 <td class = "newTable" id = "appTitle"></td>
+//                 <td class = "newTable" id = "appSalary"></td>
+//                 <td></td>
+//                 </tr>`)
+// }HOW TO ADD NEW ROW ON BUTTON CLICK?
+
 
 function readyNow(){
     console.log('JQ Loaded')
 
     $('#submit').on('click', submitInfo )
+
+    // $('.parentTable').on('click', '.newTable', newTableRow);  NOT DONE YET
 }
