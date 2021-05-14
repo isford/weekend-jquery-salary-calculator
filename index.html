@@ -4,13 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="bootstrap.css">
     <script src="jquery.js"></script>
     <script src="client.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Salary Calculator</title>
-    <h1>Salary Calculator</h1>
+    
 </head>
 <body>
-    
+        <h1>Salary Calculator</h1>
+        
+        <h2>Add Employee</h2>
+
+        <input id="firstIn" type="text" placeholder="First Name">
+        <input id="lastIn" type="text" placeholder="Last Name">
+        <input id="idIn" type="text" placeholder="ID">
+        <input id="titleIn" type="text" placeholder="Title">
+        <input id="salaryIn" type="text" placeholder="Annual Salary">
+
+        <button type ="button" id = "submit">Submit</button>
+        
+        <h2>Employees</h2>
+         <table style="width:100%">
+             <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
+                <th>Delete Button</th>
+            </tr>
+            <tr>
+                <td id = "appFn"></td>
+                <td id = "appLn"></td>
+                <td id = "appId"></td>
+                <td id = "appTitle"></td>
+                <td id = "appSalary"></td>
+                <td></td>
+            </tr>
+        </table>
+
 </body>
 </html>

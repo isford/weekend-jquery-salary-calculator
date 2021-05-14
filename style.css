@@ -1,0 +1,24 @@
+h1{
+    color: white;
+    background-color: grey;
+    text-align: center;
+}
+
+table{
+    text-align: left;
+    padding-left: 15px;
+    border: 2px solid black;
+}
+
+th{
+    background-color: rgb(159, 151, 151);
+    border: 2px solid black;
+    padding: 5px;
+    margin: 0px;
+}
+
+/* td{
+    text-align: left;
+    padding-left: 15px;
+    border: 2px solid black;
+} */
