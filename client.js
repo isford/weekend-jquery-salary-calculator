@@ -24,12 +24,15 @@ const person = {
     // $('.table').append(`<td>${person.title}</td>`);
     // $('.table').append(`<td>${person.annualSalary}</td>`);
 
-     $('.table').append(`<tr></tr>
-                <td class = "newColumn" id = "appFn">${person.firstName}</td>
-                <td class = "newColumn" id = "appLn">${person.lastName}</td>
-                <td class = "newColumn" id = "appId">${person.id}</td>
-                <td class = "newColumn" id = "appTitle">${person.title}</td>
-                <td class = "newColumn" id = "appSalary">${person.annualSalary}</td>
+ 
+    
+    //$('.table').addClass(person.firstName);
+     $('.table').append(`<tr class = "nRow" >
+                <td id = "appFn">${person.firstName}</td>
+                <td id = "appLn">${person.lastName}</td>
+                <td id = "appId">${person.id}</td>
+                <td id = "appTitle">${person.title}</td>
+                <td id = "appSalary">${person.annualSalary}</td>
                 <td><button class="btn btn-danger" id = "deleteBtn" >Delete</button></td>
             </tr>`)
 
@@ -43,17 +46,22 @@ const person = {
     //TESTER FOR CLICK EVENT
     console.log(person.firstName , person.lastName , person.id , person.title , person.annualSalary )
 
-    employeeArray.push(person);
-
-    function monthlyCost(salary){
-        let monthly = salary/12;
-        $('.monthly').append(monthly);
-        return monthly;
+    let total = 0;
+    function monthlyTotal(array){
+        for (let i = 0; i < array.length; i++){
+        total = array[i].annualSalary;
+        total += Number(total);
+        total = total/12}
+        $('.monthly').append(total)
+       return total;
     }
 
-    monthlyCost(person.annualSalary);
-    
-}
+    employeeArray.push(person);
+
+    // monthlyCost(person.annualSalary);
+    monthlyTotal(employeeArray)
+
+ 
 
 // function newTableRow(){
 //    $('.table').append(`<tr>
@@ -81,5 +89,13 @@ function readyNow(){
 
 function deleteInfo(){
     console.log('Delete Button Clicked')
-     $(this).closest('.table').remove();
+     $(this).closest('.nRow').remove();
 }
+
+//     let total = 0;
+// function monthlyTotal(array){
+//         for (let i = 0; i < array.length; i++){
+//         total = array[i].annualSalary;
+//         total += Number(total);
+//         total = total/12;
+//         $('.monthly').append(total)}
