@@ -44,6 +44,14 @@ const person = {
     console.log(person.firstName , person.lastName , person.id , person.title , person.annualSalary )
 
     employeeArray.push(person);
+
+    function monthlyCost(salary){
+        let monthly = salary/12;
+        $('.monthly').append(monthly);
+        return monthly;
+    }
+
+    monthlyCost(person.annualSalary);
     
 }
 
