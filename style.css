@@ -17,12 +17,9 @@ th{
     margin: 0px;
 }
 
-/* td{
+td{
     text-align: left;
     padding-left: 15px;
     border: 2px solid black;
-} */
-
-.deleteBtn{
-    color: blue;
 }
+
