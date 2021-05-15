@@ -30,7 +30,7 @@ const person = {
                 <td class = "newColumn" id = "appId">${person.id}</td>
                 <td class = "newColumn" id = "appTitle">${person.title}</td>
                 <td class = "newColumn" id = "appSalary">${person.annualSalary}</td>
-                <td><button class="btn btn-danger" >Delete</button></td>
+                <td><button class="btn btn-danger" id = "deleteBtn" >Delete</button></td>
             </tr>`)
 
     // CLEAR INPUT
@@ -64,7 +64,14 @@ function readyNow(){
 
     $('#submit').on('click', submitInfo)
 
+    $('#deleteBtn').on('click', deleteInfo)
+
     // $('.table').on('click', '.newTable', newTableRow)
 
     // $('.parentTable').on('click', '.newTable', newTableRow);  NOT DONE YET
+}
+
+function deleteInfo(){
+    console.log('Delete Button Clicked')
+     $(this).closest('.table').remove();
 }
