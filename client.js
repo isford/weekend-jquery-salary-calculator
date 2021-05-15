@@ -48,13 +48,13 @@ const person = {
 }
 
 function newTableRow(){
-   $('.table').append(`<tr></tr>
+   $('.table').append(`<tr>
                 <td class = "newColumn" id = "appFn">${person.firstName}</td>
                 <td class = "newColumn" id = "appLn">${person.lastName}</td>
                 <td class = "newColumn" id = "appId">${person.id}</td>
                 <td class = "newColumn" id = "appTitle">${person.title}</td>
                 <td class = "newColumn" id = "appSalary">${person.annualSalary}</td>
-                <td></td>
+                <td> <button class="deleteBtn">Delete</button> </td>
             </tr>`)
 }
 
