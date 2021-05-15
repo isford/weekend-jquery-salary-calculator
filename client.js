@@ -64,7 +64,7 @@ function readyNow(){
 
     $('#submit').on('click', submitInfo)
 
-    $('#deleteBtn').on('click', deleteInfo)
+    $('.table').on('click', '#deleteBtn', deleteInfo);
 
     // $('.table').on('click', '.newTable', newTableRow)
 
