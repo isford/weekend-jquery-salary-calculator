@@ -10,7 +10,7 @@ function submitInfo(){
     console.log('Submit button clicked')//Submit button test
 
     //GETTER//Person object with all relevant data
-const person = {
+let person = {
     firstName : $('#firstIn').val(),
     lastName : $('#lastIn').val(),
     id : $('#idIn').val(),
@@ -39,16 +39,25 @@ const person = {
     console.log(person.firstName , person.lastName , person.id , person.title , person.annualSalary )
 
     //How to find monthly total from salary, get total, and add to previous
-    let total = 0;
+    let mTotal = 0;
+
     function monthlyTotal(array){
         for (let i = 0; i < array.length; i++){
-        total = array[i].annualSalary;
-        total = Number(total);
-        total += total;
-        total = total/12}
-        $('.monthly').append(total)
-       return total;
+        mTotal = array[i].annualSalary; //Set total equal to salary value at position i
+        mTotal = parseFloat(mTotal);// Set total from string to number
+        mTotal = mTotal/12}//Dividing annual salary by 12 to get monthly salary
+        mTotal += mTotal;  // Getting the sum of one total and adding to previous
+        $('.monthly').append(mTotal)
+       return mTotal;
     }
+
+    //Turns output red if over 20,000
+    function salaryLimit(){
+        if (mTotal > 20000){
+            $('.monthly').addClass("turnRed")
+        }
+    }
+    
     //adds person to array for getting total salary sum
     employeeArray.push(person);
 
