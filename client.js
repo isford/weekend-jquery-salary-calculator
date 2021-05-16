@@ -1,13 +1,15 @@
-console.log('JS Loaded');
+console.log('JS Loaded');//JS Test
 
-$(document).ready(readyNow);
+$(document).ready(readyNow);//Loading JQ
 
-let employeeArray = [];
+let employeeArray = [];//Array to push employees on when finding sum
+
+
 
 function submitInfo(){
-    console.log('Submit button clicked')
+    console.log('Submit button clicked')//Submit button test
 
-    //GETTER
+    //GETTER//Person object with all relevant data
 const person = {
     firstName : $('#firstIn').val(),
     lastName : $('#lastIn').val(),
@@ -15,18 +17,8 @@ const person = {
     title : $('#titleIn').val(),
     annualSalary : $('#salaryIn').val()
 }
-
-//APPEND TO TABLE
-    // $('.table').append(`<tr></tr>`)
-    // $('.table').append(`<td>${person.firstName}</td>`);
-    // $('.table').append(`<td>${person.lastName}</td>`);
-    // $('.table').append(`<td>${person.id}</td>`);
-    // $('.table').append(`<td>${person.title}</td>`);
-    // $('.table').append(`<td>${person.annualSalary}</td>`);
-
- 
     
-    //$('.table').addClass(person.firstName);
+    //Properly appending info to new row in DOM
      $('.table').append(`<tr class = "nRow" >
                 <td id = "appFn">${person.firstName}</td>
                 <td id = "appLn">${person.lastName}</td>
@@ -43,26 +35,29 @@ const person = {
     $('#titleIn').val('');
     $('#salaryIn').val('');
 
-    //TESTER FOR CLICK EVENT
+    //Test to make sure all entered info if being properly 'grabbed' from input boxes
     console.log(person.firstName , person.lastName , person.id , person.title , person.annualSalary )
 
+    //How to find monthly total from salary, get total, and add to previous
     let total = 0;
     function monthlyTotal(array){
         for (let i = 0; i < array.length; i++){
         total = array[i].annualSalary;
-        total += Number(total);
+        total = Number(total);
+        total += total;
         total = total/12}
         $('.monthly').append(total)
        return total;
     }
-
+    //adds person to array for getting total salary sum
     employeeArray.push(person);
 
-    // monthlyCost(person.annualSalary);
+    //Call on monthlyTotal function to get salary values
     monthlyTotal(employeeArray)
+}
 
  
-
+//OLD CODE 'Weird comment in and out from IDE'
 // function newTableRow(){
 //    $('.table').append(`<tr>
 //                 <td class = "newColumn" >${person.firstName}</td>
@@ -75,6 +70,7 @@ const person = {
 // }
 
 
+//Function for getting from click event
 function readyNow(){
     console.log('JQ Loaded')
 
@@ -87,15 +83,8 @@ function readyNow(){
     // $('.parentTable').on('click', '.newTable', newTableRow);  NOT DONE YET
 }
 
+//Function to delete info from input boxes
 function deleteInfo(){
     console.log('Delete Button Clicked')
      $(this).closest('.nRow').remove();
 }
-
-//     let total = 0;
-// function monthlyTotal(array){
-//         for (let i = 0; i < array.length; i++){
-//         total = array[i].annualSalary;
-//         total += Number(total);
-//         total = total/12;
-//         $('.monthly').append(total)}
